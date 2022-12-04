@@ -42,7 +42,7 @@ created user-feature
 # GET /bookings     (protected route)
  - to get all booked ticket 
  
- # i have adminbro package to create admin panal 
+ # i have used adminbro package to create admin panal 
  url -- https://ticket-booking-app-server-production.up.railway.app/admin
 
 email => keshav@admin.com
