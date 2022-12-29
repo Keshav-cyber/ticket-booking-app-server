@@ -1,5 +1,6 @@
 const ticketModel = require("../models/ticketModel")
 const orderModel = require("../models/orderModel")
+const eventModel = require("../models/eventModel")
 
 
 
@@ -54,8 +55,10 @@ const  getAllBookedTickets = async function(req,res){
 const getAllEventTicket = async function(req,res){
     try{
         let id = req.params.id
+        let event = await eventModel.findById(id)
         let allTickets = await ticketModel.find({eventId:id}).populate("eventId")
-        res.status(200).send({allTickets})
+        event._doc.tickets = allTickets
+        res.status(200).send({event})
 
     }
     catch (error) {
